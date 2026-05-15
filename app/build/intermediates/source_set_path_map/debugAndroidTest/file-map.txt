@@ -1,0 +1,4 @@
+com.gramayatri.app.test.app-androidTest-0 D:\GramaYatri\app\build\generated\res\resValues\androidTest\debug
+com.gramayatri.app.test.app-mergeDebugAndroidTestResources-1 D:\GramaYatri\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.gramayatri.app.test.app-mergeDebugAndroidTestResources-2 D:\GramaYatri\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.gramayatri.app.test.app-merged_res-3 D:\GramaYatri\app\build\intermediates\merged_res\debugAndroidTest

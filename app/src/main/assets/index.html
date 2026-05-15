@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grama-Yatri — Live Bus Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=DM+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBnGPh0ahD9Sw4a2RymFVFP5A7-e-PFzHA",
+      authDomain: "gramayatri-985dd.firebaseapp.com",
+      databaseURL: "https://gramayatri-985dd-default-rtdb.firebaseio.com",
+      projectId: "gramayatri-985dd",
+      storageBucket: "gramayatri-985dd.firebasestorage.app",
+      messagingSenderId: "513005917991",
+      appId: "1:513005917991:web:a6fcea58cc139c96b73b02"
+    };
+    firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+  </script>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-logo">
+    🚌 ग्राम-यात्री <span>Grama-Yatri</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+    <div class="topbar-user" id="userName">Ravi ▾</div>
+  </div>
+</div>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner" id="alertBanner">
+  <div class="alert-icon">⚠️</div>
+  <div class="alert-text">
+    <strong id="alertTitle">Morning bus cancelled today</strong>
+    <span id="alertDesc">Route 47B will not run the 6:30 AM trip.</span>
+    <div class="alert-reporter" id="alertReporter">Reported by Lakshmi · 2 min ago</div>
+  </div>
+  <button class="alert-close" onclick="dismissAlert()">✕</button>
+</div>
+
+<!-- ROUTE INFO -->
+<div class="section" style="padding-bottom:0">
+  <div class="section-label">Current Route</div>
+  <div class="route-card">
+    <div>
+      <div class="route-name">Route 47B — Tumkur Road</div>
+      <div class="route-sub">Gubbi → Tumkur · 9 stops · 62 km</div>
+    </div>
+    <div class="route-badge">✓ Active</div>
+  </div>
+</div>
+
+<!-- PING CARD -->
+<div class="section">
+  <div class="section-label">Bus Ping — Report location</div>
+  <div class="ping-card">
+    <div class="ping-card-title">Where are you right now?</div>
+    <div class="ping-btns">
+      <button class="ping-btn" id="btn-onbus" onclick="ping('onbus')">
+        <span class="icon">🪑</span>I'm on the bus
+      </button>
+      <button class="ping-btn" id="btn-passed" onclick="ping('passed')">
+        <span class="icon">💨</span>Bus just passed me
+      </button>
+    </div>
+    <div class="ping-success hidden" id="pingSuccess">
+      ✅ <span id="pingSuccessText">Ping sent! ETA updating for all passengers.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ROUTE STEPPER -->
+<div class="section" style="padding-top:0">
+  <div class="section-label" style="margin-bottom:8px">
+    Live Route · <span id="busStopLabel">Bus at Koratagere X</span>
+  </div>
+  <div class="stepper" id="stepper"></div>
+</div>
+
+<!-- USER SWITCHER -->
+<div class="section">
+  <div class="section-label">Simulate as passenger at stop</div>
+  <div class="user-switcher">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:8px">
+      Switch user to see different ETAs
+    </div>
+    <div class="user-row" id="userRow"></div>
+  </div>
+</div>
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <button class="alert-btn" onclick="openAlertModal()">
+    ⚠️ Report an Alert
+  </button>
+</div>
+
+<!-- ALERT MODAL -->
+<div class="modal-overlay" id="alertModal">
+  <div class="modal">
+    <div class="modal-title">⚠️ Report an Alert</div>
+    <select class="modal-input" id="alertType">
+      <option>Bus cancelled today</option>
+      <option>Bus running late (~20 min)</option>
+      <option>Bus is overcrowded</option>
+      <option>Route diversion</option>
+      <option>Other</option>
+    </select>
+    <textarea class="modal-input" id="alertMsg" rows="3"
+      placeholder="Add details (optional)…"></textarea>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeAlertModal()">Cancel</button>
+      <button class="modal-submit" onclick="submitAlert()">Submit Report</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

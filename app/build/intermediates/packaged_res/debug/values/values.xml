@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cream">#FDF8F3</color>
+    <color name="saffron">#E8591A</color>
+    <color name="saffron_dark">#C94A0F</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Grama-Yatri</string>
+    <style name="Theme.GramaYatri" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="android:statusBarColor">#E8591A</item>
+        <item name="android:windowBackground">#FDF8F3</item>
+        <item name="colorPrimary">#E8591A</item>
+        <item name="colorPrimaryVariant">#C94A0F</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+    </style>
+</resources>
