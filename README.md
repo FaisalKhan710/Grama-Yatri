@@ -197,21 +197,21 @@ Shift + F10
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
 
 ### Home Screen
-![Home Screen](Screenshots/Home - Screen.jpeg)
+![Home Screen](Screenshots/Home-Screen.jpeg)
 
 ---
 
 ### Route Tracking
-![Route Tracking](Screenshots/Route - Tracking.jpeg)
+![Route Tracking](Screenshots/Route-Tracking.jpeg)
 
 ---
 
 ### ETA Display
-![ETA Display](Screenshots/ETA - Display.jpeg)
+![ETA Display](Screenshots/ETA-Display.jpeg)
 
 ---
 
@@ -219,7 +219,7 @@ Shift + F10
 ![Alert System](Screenshots/Alerts.jpeg)
 
 ### Alert System Functions
-![Alert System Functions](Screenshots/Alert - Functions.jpeg)
+![Alert System Functions](Screenshots/Alert-Functions.jpeg)
 
 ---
 
