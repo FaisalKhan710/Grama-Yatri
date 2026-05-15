@@ -224,7 +224,7 @@ Shift + F10
 ---
 
 ### Alert System Options
-![Alert System Options](Screenshots/Alert Options.jpeg)
+![Alert System Options](Screenshots/Alert%20Options.jpeg)
 
 ### Firebase Realtime Sync
 ![Firebase Sync](screenshots/firebase-sync.png)
