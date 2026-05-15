@@ -199,14 +199,35 @@ Shift + F10
 
 # 📸 Screenshots
 
-> Add screenshots of your app UI here.
 
-Suggested screenshots:
-- Home Screen
-- Route Timeline
-- Firebase Realtime Updates
-- Alert System
-- ETA Display
+### Home Screen
+![Home Screen](Screenshots/Home - Screen.jpeg)
+
+---
+
+### Route Tracking
+![Route Tracking](Screenshots/Route - Tracking.jpeg)
+
+---
+
+### ETA Display
+![ETA Display](Screenshots/ETA - Display.jpeg)
+
+---
+
+### Alert System
+![Alert System](Screenshots/Alerts.jpeg)
+
+### Alert System Functions
+![Alert System Functions](Screenshots/Alert - Functions.jpeg)
+
+---
+
+### Alert System Options
+![Alert System Options](Screenshots/Alert Options.jpeg)
+
+### Firebase Realtime Sync
+![Firebase Sync](screenshots/firebase-sync.png)
 
 ---
 
